@@ -37,8 +37,13 @@ Else
 EndIf
 
 Local $sSecret = _CmdLine_Get('key')
+Local $full = FileRead($file)
 
-ConsoleWrite("HMAC-" & $alg & "(" & $file & ")= " & _HashHMAC($alg, $file, $sSecret) & @CRLF)
+If FileExists($file) Then
+	ConsoleWrite("HMAC-" & $alg & "(" & $file & ")= " & _HashHMAC($alg, $full, $sSecret) & @CRLF)
+Else
+	ConsoleWrite("Error: """ & $file & """ not found." & @CRLF);
+Endif
 
 Func _HashHMAC($sAlgorithm, $bData, $bKey, $bRaw_Output = False)
 	Local $oHashHMACErrorHandler = ObjEvent("AutoIt.Error", "_HashHMACErrorHandler")
