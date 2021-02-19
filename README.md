@@ -1,5 +1,5 @@
 # HMAC CLI
-### Compute Hash-based Message Authentication Code of Files
+### Compute Hash-based Message Authentication Code of files
 <PRE>
 HMAC Tool CLI v1.00 - ALBANESE Lab © 2018-2021
 
