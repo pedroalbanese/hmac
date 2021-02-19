@@ -1,4 +1,4 @@
-# HMAC cryptographic function CLI
+# HMAC Cryptographic Function CLI
 ### Compute Hash-based Message Authentication Code of files
 <PRE>
 HMAC Tool CLI v1.00 - ALBANESE Lab © 2018-2021
