@@ -8,3 +8,7 @@ Usage:
 
 Algorithms: MD5, SHA1, SHA-256, SHA-384, SHA-512, RMD160
 </PRE>
+
+## License
+
+This project is licensed under the ISC License.
