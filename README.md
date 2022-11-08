@@ -1,4 +1,4 @@
-# HMAC Cryptographic Function CLI+GUI
+# HMAC Cryptographic Function
 [![GitHub downloads](https://img.shields.io/github/downloads/pedroalbanese/hmac/total.svg?logo=github&logoColor=white)](https://github.com/pedroalbanese/hmac/releases)
 
 ### Compute Hash-based Message Authentication Code of files
