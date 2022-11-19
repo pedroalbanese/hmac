@@ -1,3 +1,15 @@
+; ====================================================
+; ================ HMAC Tool With GUI ================
+; ====================================================
+; AutoIt version: 3.3.12.0
+; Language:       English
+; Author:         Pedro F. Albanese
+; Modified:       -
+;
+; ----------------------------------------------------------------------------
+; Script Start
+; ----------------------------------------------------------------------------
+
 #NoTrayIcon
 #include <ComboConstants.au3>
 #include <GUIConstantsEx.au3>
@@ -39,7 +51,6 @@ Func Main()
 				EndIf
 				GUICtrlSetData($idInput, $sFilePath) ; Set the inputbox with the filepath.
 				GUICtrlSetData($idHashLabel, "Hash Digest") ; Reset the hash digest label.
-
 			Local $iAlgorithm = "SHA256"
 
 			Case $idCombo ; Check when the combobox is selected and retrieve the correct algorithm.
@@ -64,9 +75,14 @@ Func Main()
 				GUICtrlSetData($idSecret, $sData)
 			Case $idCalculate
 				$sSecret = GUICtrlRead($idSecret)
-				$Full = FileRead(GUICtrlRead($idInput))
-				$dHash = _HashHMAC($iAlgorithm, $Full, $sSecret); Create a hash of the file.
-				GUICtrlSetData($idHashLabel, $dHash) ; Set the hash digest label with the hash data.
+				Local $iFileExists = FileExists(GUICtrlRead($idInput))
+				If Not $iFileExists Then
+						MsgBox($MB_SYSTEMMODAL, "", "The file doesn't exist.")
+				Else
+					$Full = FileRead(GUICtrlRead($idInput))
+					$dHash = _HashHMAC($iAlgorithm, $Full, $sSecret); Create a hash of the file.
+					GUICtrlSetData($idHashLabel, $dHash) ; Set the hash digest label with the hash data.
+				EndIf
 		EndSwitch
 	WEnd
 
